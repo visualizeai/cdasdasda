@@ -1,12 +1,335 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cdasdasda</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="description" content="VerCred — crédito com transparência, velocidade e segurança." />
+  <title>VerCred | Crédito com confiança</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Background effects -->
+  <div class="bg">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="grid"></div>
+    <canvas id="sparkles" aria-hidden="true"></canvas>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">VerCred</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#solucoes">Soluções</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#contato" class="btn btn--ghost">Falar com especialista</a>
+      </nav>
+
+      <button class="menu" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile" id="mobileNav" hidden>
+      <a href="#solucoes">Soluções</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#contato" class="btn btn--primary">Falar com especialista</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <div class="pill">
+            <span class="dot"></span>
+            Crédito com transparência e segurança
+          </div>
+
+          <h1>
+            Crédito inteligente para <span class="grad">pessoas</span> e <span class="grad">empresas</span>.
+          </h1>
+
+          <p class="lead">
+            A VerCred combina análise responsável, atendimento humano e tecnologia para oferecer
+            condições claras — sem surpresas.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#contato">Simular agora</a>
+            <a class="btn btn--ghost" href="#como-funciona">Ver como funciona</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat__num" data-count="98">0</div>
+              <div class="stat__label">Satisfação</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num" data-count="24">0</div>
+              <div class="stat__label">Horas p/ resposta</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num" data-count="120">0</div>
+              <div class="stat__label">Mil clientes atendidos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__card reveal" style="transition-delay:120ms">
+          <div class="glass">
+            <div class="glass__top">
+              <div>
+                <div class="kicker">Pré-análise</div>
+                <div class="title">Simulação rápida</div>
+              </div>
+              <div class="badge">Seguro</div>
+            </div>
+
+            <div class="form">
+              <label>
+                <span>Tipo</span>
+                <select>
+                  <option>Crédito pessoal</option>
+                  <option>Crédito consignado</option>
+                  <option>Capital de giro</option>
+                  <option>Antecipação de recebíveis</option>
+                </select>
+              </label>
+
+              <div class="row">
+                <label>
+                  <span>Valor</span>
+                  <input type="text" value="R$ 15.000" />
+                </label>
+                <label>
+                  <span>Prazo</span>
+                  <input type="text" value="24 meses" />
+                </label>
+              </div>
+
+              <div class="quote">
+                <div>
+                  <div class="quote__label">A partir de</div>
+                  <div class="quote__value">1,49% a.m.</div>
+                </div>
+                <a class="btn btn--primary btn--small" href="#contato">Continuar</a>
+              </div>
+
+              <p class="fine">
+                *Exemplo ilustrativo. Condições sujeitas à análise de crédito e políticas internas.
+              </p>
+            </div>
+          </div>
+
+          <div class="floating floating--1"></div>
+          <div class="floating floating--2"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logos -->
+    <section class="logos">
+      <div class="container">
+        <div class="logos__row reveal">
+          <span>Confiada por equipes financeiras</span>
+          <div class="logos__list">
+            <div class="logo">FinCore</div>
+            <div class="logo">AtlasPay</div>
+            <div class="logo">NovaGestão</div>
+            <div class="logo">Mercatto</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions -->
+    <section class="section" id="solucoes">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Soluções VerCred</h2>
+          <p>Produtos desenhados para clareza, previsibilidade e velocidade.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal">
+            <h3>Crédito Pessoal</h3>
+            <p>Parcelas fixas, contratação simples e acompanhamento transparente.</p>
+            <ul>
+              <li>Taxas competitivas</li>
+              <li>Sem letras miúdas</li>
+              <li>Atendimento humano</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" style="transition-delay:80ms">
+            <h3>Consignado</h3>
+            <p>Condições especiais com desconto em folha, quando aplicável.</p>
+            <ul>
+              <li>Processo guiado</li>
+              <li>Documentação objetiva</li>
+              <li>Prazo flexível</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" style="transition-delay:160ms">
+            <h3>Empresas</h3>
+            <p>Capital de giro e soluções para fluxo de caixa com análise responsável.</p>
+            <ul>
+              <li>Resposta rápida</li>
+              <li>Estrutura sob medida</li>
+              <li>Suporte consultivo</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section--alt" id="como-funciona">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Como funciona</h2>
+          <p>Um fluxo simples, com comunicação clara em cada etapa.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step__num">01</div>
+            <div class="step__body">
+              <h3>Simule</h3>
+              <p>Informe o tipo de crédito e o valor desejado.</p>
+            </div>
+          </div>
+
+          <div class="step reveal" style="transition-delay:80ms">
+            <div class="step__num">02</div>
+            <div class="step__body">
+              <h3>Análise responsável</h3>
+              <p>Avaliamos com critérios claros e foco em sustentabilidade.</p>
+            </div>
+          </div>
+
+          <div class="step reveal" style="transition-delay:160ms">
+            <div class="step__num">03</div>
+            <div class="step__body">
+              <h3>Proposta e contratação</h3>
+              <p>Você recebe condições objetivas e acompanha tudo em tempo real.</p>
+            </div>
+          </div>
+
+          <div class="step reveal" style="transition-delay:240ms">
+            <div class="step__num">04</div>
+            <div class="step__body">
+              <h3>Liberação</h3>
+              <p>Após aprovação, liberamos conforme o produto contratado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section" id="beneficios">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Por que a VerCred</h2>
+          <p>Confiança se constrói com processos, segurança e transparência.</p>
+        </div>
+
+        <div class="features">
+          <div class="feature reveal">
+            <h3>Transparência</h3>
+            <p>Condições claras, sem surpresas e com comunicação objetiva.</p>
+          </div>
+          <div class="feature reveal" style="transition-delay:80ms">
+            <h3>Segurança</h3>
+            <p>Boas práticas de proteção de dados e controles internos.</p>
+          </div>
+          <div class="feature reveal" style="transition-delay:160ms">
+            <h3>Agilidade</h3>
+            <p>Fluxo otimizado para reduzir atrito e acelerar decisões.</p>
+          </div>
+          <div class="feature reveal" style="transition-delay:240ms">
+            <h3>Atendimento</h3>
+            <p>Especialistas para orientar a melhor opção para seu perfil.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--alt" id="contato">
+      <div class="container">
+        <div class="contact reveal">
+          <div class="contact__copy">
+            <h2>Fale com um especialista</h2>
+            <p>
+              Envie seus dados e retornaremos com uma proposta alinhada ao seu perfil.
+            </p>
+
+            <div class="contact__meta">
+              <div><span>Horário:</span> Seg–Sex, 9h–18h</div>
+              <div><span>E-mail:</span> contato@vercred.com.br</div>
+              <div><span>Telefone:</span> (11) 0000-0000</div>
+            </div>
+          </div>
+
+          <form class="contact__form" onsubmit="event.preventDefault(); window.location.hash='#contato';">
+            <label>
+              <span>Nome</span>
+              <input required placeholder="Seu nome" />
+            </label>
+            <label>
+              <span>E-mail</span>
+              <input required type="email" placeholder="voce@empresa.com" />
+            </label>
+            <label>
+              <span>Mensagem</span>
+              <textarea rows="4" placeholder="Conte rapidamente o que você precisa"></textarea>
+            </label>
+
+            <button class="btn btn--primary" type="submit">Enviar</button>
+            <p class="fine">
+              Ao enviar, você concorda com nossa política de privacidade (exemplo).
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="brand brand--footer">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">VerCred</span>
+      </div>
+      <div class="footer__links">
+        <a href="#solucoes">Soluções</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer__copy">© <span id="year"></span> VerCred. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
 </html>
